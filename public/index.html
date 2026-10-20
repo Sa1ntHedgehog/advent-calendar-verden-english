@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Advent Calendar · Verden English</title>
+  <meta name="description" content="30 days of short English tasks for A2 learners from Verden English: meanings, gap fills, phrases, listening and tests." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Karla:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f3a32'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-size='19' font-weight='700' text-anchor='middle' fill='%23f3ead8'%3EV%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="snow" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="brand">
+      <span class="brand-mark">V</span>
+      <span class="brand-name">Verden English</span>
+    </div>
+    <div class="headline">
+      <p class="eyebrow">A2 · 30 days · 5 kinds of tasks</p>
+      <h1>The <em>Advent</em><br />Calendar</h1>
+      <p class="lede">Open one door every day. Behind each door there is a short English task — a few minutes of practice before the holidays.</p>
+    </div>
+    <aside class="progress-card" aria-live="polite">
+      <div class="ring" style="--p: 0">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <circle class="ring-track" cx="60" cy="60" r="52" />
+          <circle class="ring-fill" cx="60" cy="60" r="52" />
+        </svg>
+        <div class="ring-label"><strong id="doneCount">0</strong><span>of 30 done</span></div>
+      </div>
+      <dl class="stats">
+        <div><dt>Stars</dt><dd id="starCount">0</dd></div>
+        <div><dt>Next door</dt><dd id="nextDoor">—</dd></div>
+      </dl>
+    </aside>
+  </header>
+
+  <section class="legend" aria-label="Task types">
+    <span class="chip" data-type="meaning">Meanings</span>
+    <span class="chip" data-type="blanks">Fill the gaps</span>
+    <span class="chip" data-type="phrases">Phrases</span>
+    <span class="chip" data-type="listening">Listening</span>
+    <span class="chip" data-type="quiz">Test</span>
+  </section>
+
+  <main>
+    <div id="calendar" class="calendar" aria-label="Calendar doors"></div>
+  </main>
+
+  <footer class="foot">
+    <p>A new door opens every day after your first visit. Your progress is saved in this browser.</p>
+    <p class="foot-small">© Verden English</p>
+  </footer>
+
+  <dialog id="taskDialog" class="task-dialog" aria-labelledby="taskTitle">
+    <div class="task-shell">
+      <header class="task-head">
+        <div>
+          <p class="task-meta" id="taskMeta"></p>
+          <h2 id="taskTitle"></h2>
+          <p class="task-instruction" id="taskInstruction"></p>
+        </div>
+        <button class="icon-btn" id="closeTask" aria-label="Close">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+        </button>
+      </header>
+      <div class="task-body" id="taskBody"></div>
+      <footer class="task-foot">
+        <p class="task-feedback" id="taskFeedback" role="status"></p>
+        <div class="task-actions">
+          <button class="btn ghost" id="retryTask" hidden>Try again</button>
+          <button class="btn" id="checkTask">Check answers</button>
+        </div>
+      </footer>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,3 +1,6 @@
 [build]
-  command = "npm run build" # Ваша команда сборки
-  publish = "public"          # Папка с готовым статическим сайтом (например: dist, build, out)
+  base = "public"
+  # Plain static site — nothing to compile.
+  command = "echo 'Static site, no build step required'"
+  # Relative to the base directory above.
+  publish = "."

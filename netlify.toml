@@ -1,0 +1,3 @@
+[build]
+  command = "npm run build" # Ваша команда сборки
+  publish = "public"          # Папка с готовым статическим сайтом (например: dist, build, out)
